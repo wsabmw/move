@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="/static/css/initialize.css">
+</head>
+<body>
+  <div id="app">
+       
+        <div class="top">
+          <div class="top1">
+            <img class="logo" src="/static/images/tb-logo.png" alt="">
+
+            <ul>
+                <li><a href="/index/index/index">首页</a></li>
+                <li><a href="/index/index/move">电影</a></li>
+                <li><a href="/index/index/move">连续剧</a></li>
+                <li><a href="/index/index/move">综艺</a></li>
+                <li><a href="/index/index/move">动漫</a></li>
+            </ul>
+
+           <form action="" class="left-search">
+              <input type="text" class="sr-search">
+              <input type="submit" class="sub-search" value="搜索">
+           </form>   
+     
+          </div>
+        </div>
+
+        <el-carousel class="el_car" :interval="4000" type="card" height="300px" class="hdp">
+            <el-carousel-item v-for="item in 6" :key="item">
+                <img src="//pic2.iqiyipic.com/common/lego/20190115/e8a4ac43e4fc49f7a54715f087a0c2f8.jpg" alt="">
+            </el-carousel-item>
+        </el-carousel>
+
+        <div class="content">
+           <div class="content-left">
+               <div class="cont-l-t">
+                   <div class="cont-l-t-l">
+                      <h1> 热播电影</h1>
+                   </div>
+                    <a href="" class="cont-l-t-r">更多>></a>
+               </div>
+
+               <div class="cont-l-b">
+                   <el-row :gutter="20">
+                     {foreach $move as $k=>$v}
+                      <el-col :span="4">
+                        <div class="grid-content bg-purple">
+                          <a href="{$v.move_url}">
+                              <img src="{$v.move_img}" alt="">
+                              <span>{$v.name}</span>
+                          </a>
+                      </div>
+                    </el-col>
+                    {/foreach}
+                    </el-row>
+               </div>
+           </div>
+
+           <div class="content-right">
+                <div class="cont-r-t">
+                    <h2>连续剧·排行榜</h2>
+                </div>
+                <div class="cont-r-b">
+                    <ul>
+                      {foreach $move1 as $k=>$v}
+                      <li>
+                        <span class="l-ph">{$k+1}</span>
+                       <a href="{$v.move_url}">{$v.name}</a>
+                      </li>
+                     {/foreach}
+                    </ul>
+                </div>
+           </div>
+
+        </div>
+
+        <div class="content">
+            <div class="content-left">
+                <div class="cont-l-t">
+                    <div class="cont-l-t-l">
+                       <h1> 热播动漫</h1>
+                    </div>
+                     <a href="" class="cont-l-t-r">更多>></a>
+                </div>
+ 
+                <div class="cont-l-b">
+                    <el-row :gutter="20">
+
+                       <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     <el-col :span="4">
+                         <div class="grid-content bg-purple">
+                           <a href="">
+                               <img src="/static/images/220.jpeg" alt="">
+                               <span>123</span>
+                           </a>
+                       </div>
+                     </el-col>
+                     </el-row>
+                </div>
+            </div>
+ 
+            <div class="content-right">
+                 <div class="cont-r-t">
+                     <h2>连续剧·排行榜</h2>
+                 </div>
+                 <div class="cont-r-b">
+                     <ul>
+                       <li>
+                         <span class="l-ph">1</span>
+                         射天狼
+                       </li>
+                       <li>
+                           <span class="l-ph">2</span>
+                           将夜
+                      </li>
+                      <li>
+                         <span class="l-ph">3</span>
+                         天天向上
+                       </li>
+                       <li>
+                           <span class="l-ph">4</span>
+                           地球的最后一天
+                      </li>
+                      <li>
+                         <span class="l-ph">5</span>
+                         流星花园
+                       </li>
+                       <li>
+                           <span class="l-ph">6</span>
+                           终极一班
+                      </li>
+                      <li>
+                         <span class="l-ph">7</span>
+                         最强终极保镖
+                       </li>
+                       <li>
+                           <span class="l-ph">8</span>
+                           东京爱情故事
+                      </li>
+                       
+                      
+                     </ul>
+                 </div>
+            </div>
+ 
+         </div>
+
+
+         <div class="friend">
+           <span>友情链接:</span>
+           <a href="">爱奇艺</a>
+           <a href="">小熊资源网站</a>
+           <a href="">腾讯视频</a>
+           <a href="">优酷</a>
+         </div>
+
+
+         <div class="foot">
+              <div class="foot-b">
+                  <p>热播电影  热播连续剧  热播综艺  热播动漫  留言求片</p>
+                  <p>免责声明:本网站所有内容均系收集于各大网站，本站只提供WEB页面服务，并不提供影片资源储存也不参与录制与上传，若本站收录内容无意侵犯了贵公司版权，请给网页底部邮箱地址来信，我们会及时处理和回复，谢谢合作。</p>
+                  <p>tv.eiiku.com站长邮箱:tv@eiiku.com</p>
+              </div>
+         </div>
+
+
+  </div>
+ 
+  
+  
+
+</body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      item:[]
+    });
+  </script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/bootstrop.css">  
+    <link rel="stylesheet" href="/static/css/move.css">
+    <link rel="stylesheet" href="/static/css/initialize.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="top">
+            <div class="top1">
+              <img class="logo" src="/static/images/tb-logo.png" alt="">
+  
+              <ul>
+                  <li><a href="/index/index/index">首页</a></li>
+                  <li><a href="/index/index/move">电影</a></li>
+                  <li><a href="/index/index/move">连续剧</a></li>
+                  <li><a href="/index/index/move">综艺</a></li>
+                  <li><a href="/index/index/move">动漫</a></li>
+              </ul>
+  
+             <form action="" class="left-search">
+                <input type="text" class="sr-search">
+                <input type="submit" class="sub-search" value="搜索">
+             </form>   
+       
+            </div>
+          </div>
+            <div class="typeall">
+                <div class="type-l"><span><strong>类型:</strong></span></div>
+               <div class="type-r">
+                 {foreach $type as $k=>$v}
+                    <a href="/index/index/move?id={$v.id}">{$v.fl_name}</a>
+                 {/foreach}
+               </div>
+            </div>
+
+            <div class="move-cont">
+                    <el-row :gutter="20">
+                        {foreach $move as $k=>$v}
+                        <el-col :span="4">
+                            <a href="/index/index/move_details/?mid={$v.id}">
+                                <div class="grid-content bg-purple">
+                                    <img src="{$v.move_img}" alt="">
+                                    <p>{$v.name}</p>
+                                    <span>{$v.actor}</span>
+                                </div>
+                            </a>
+                        </el-col>
+                        {/foreach}
+                    </el-row>
+            </div>
+            </el-row>
+            </div>
+
+            <!-- <h3 class="fy">翻页位置</h3>
+             -->
+             {$move|raw}
+
+
+            <div class="foot">
+                    <div class="foot-b">
+                        <p>热播电影  热播连续剧  热播综艺  热播动漫  留言求片</p>
+                        <p>免责声明:本网站所有内容均系收集于各大网站，本站只提供WEB页面服务，并不提供影片资源储存也不参与录制与上传，若本站收录内容无意侵犯了贵公司版权，请给网页底部邮箱地址来信，我们会及时处理和回复，谢谢合作。</p>
+                        <p>tv.eiiku.com站长邮箱:tv@eiiku.com</p>
+                    </div>
+               </div>
+    </div>
+   
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+    })
+</script>
+</html>

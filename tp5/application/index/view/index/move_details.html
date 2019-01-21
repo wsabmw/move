@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/bootstrop.css">  
+    <!-- <link rel="stylesheet" href="/static/css/move.css"> -->
+    <link rel="stylesheet" href="/static/css/initialize.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="top">
+            <div class="top1">
+              <img class="logo" src="/static/images/tb-logo.png" alt="">
+  
+              <ul>
+                  <li><a href="/index/index/index">首页</a></li>
+                  <li><a href="/index/index/move">电影</a></li>
+                  <li><a href="/index/index/move">连续剧</a></li>
+                  <li><a href="/index/index/move">综艺</a></li>
+                  <li><a href="/index/index/move">动漫</a></li>
+              </ul>
+  
+             <form action="" class="left-search">
+                <input type="text" class="sr-search">
+                <input type="submit" class="sub-search" value="搜索">
+             </form>   
+       
+            </div>
+          </div>
+          <div class="move_del">
+                <div class="move_del1">
+                    <iframe src="https://api.bbbbbb.me/jx/?url={$data[0]['move_url']}" class="move_if" frameborder="0"></iframe>
+                </div>
+          </div>
+
+          <div class="introduce">
+                <div class="introduce1">
+                   <div class="in_top">
+                       <h2>{$data[0]['name']}</h2>
+                   </div>
+                   <div class="in_bot">
+                       <h2>{$data[0]['introduce']}</h2>
+                   </div>
+                </div>
+          </div>
+
+
+          <div class="content">
+                <div class="content-left">
+                    <div class="cont-l-t">
+                        <div class="cont-l-t-l">
+                           <h1> 推荐电影</h1>
+                        </div>
+                         <a href="" class="cont-l-t-r">更多>></a>
+                    </div>
+     
+                    <div class="cont-l-b">
+                        <el-row :gutter="20">
+                          {foreach $move_tj as $k=>$v}
+                           <el-col :span="4">
+                             <div class="grid-content bg-purple">
+                               <a href="{$v.move_url}">
+                                   <img src="{$v.move_img}" alt="">
+                                   <span>{$v.name}</span>
+                               </a>
+                           </div>
+                         </el-col>
+                         {/foreach}
+                         </el-row>
+                    </div>
+                </div>
+     
+                <div class="content-right">
+                     <div class="cont-r-t">
+                         <h2>电影·排行榜</h2>
+                     </div>
+                     <div class="cont-r-b">
+                         <ul>
+                           {foreach $move_ph as $k=>$v}
+                           <li>
+                             <span class="l-ph">{$k+1}</span>
+                            <a href="{$v.move_url}">{$v.name}</a>
+                           </li>
+                          {/foreach}
+                         </ul>
+                     </div>
+                </div>
+     
+             </div>
+
+          
+          
+
+
+            <div class="foot">
+                    <div class="foot-b">
+                        <p>热播电影  热播连续剧  热播综艺  热播动漫  留言求片</p>
+                        <p>免责声明:本网站所有内容均系收集于各大网站，本站只提供WEB页面服务，并不提供影片资源储存也不参与录制与上传，若本站收录内容无意侵犯了贵公司版权，请给网页底部邮箱地址来信，我们会及时处理和回复，谢谢合作。</p>
+                        <p>tv.eiiku.com站长邮箱:tv@eiiku.com</p>
+                    </div>
+               </div>
+    </div>
+   
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+    })
+</script>
+</html>
